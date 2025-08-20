@@ -1,0 +1,731 @@
+        /* 基础样式重置与通用样式 */
+        * {
+            margin: 0;
+            font-family: MiSans;
+        }
+
+        html,
+        body {
+            scroll-behavior: smooth;
+        }
+
+        #app {
+            position: relative;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 0px;
+            background: #FFFFFF;
+        }
+
+        /* 通用动画类 */
+        .fade-in-scroll-right {
+            transform: translateX(max(calc(var(--f)* -4px), 0px));
+            transition: all .3s cubic-bezier(0, .4, .5, 1);
+        }
+
+        .fade-in-scroll-left {
+            transform: translateX(min(calc(var(--f)* 4px), 0px));
+            transition: all .3s cubic-bezier(0, .4, .5, 1);
+        }
+
+        /* 头部导航 */
+        header {
+            position: fixed;
+            width: 100%;
+            height: 48px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            padding: 0px;
+            align-self: stretch;
+            background-color: rgb(255, 255, 255, 0.5);
+            backdrop-filter: blur(72px);
+            z-index: 5;
+        }
+
+        .head-container {
+            position: static;
+            height: 48px;
+            max-width: 1200px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 5px 16px;
+            gap: 32px;
+            flex-grow: 1;
+        }
+
+        .nav {
+            position: static;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 0px;
+            gap: 28px;
+            flex-grow: 1;
+        }
+
+        .nav a {
+            color: #6d6d6d;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.5s ease;
+        }
+
+        .nav a:hover {
+            color: #000000;
+        }
+
+        /* 标语部分 */
+        .slogan {
+            position: static;
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            gap: 10px;
+            align-self: stretch;
+            z-index: 1;
+        }
+
+        .slogan-highlight {
+            position: static;
+            font-size: 64px;
+            font-weight: 600;
+            line-height: 72px;
+            text-align: center;
+            letter-spacing: 0em;
+            font-variation-settings: "opsz" auto;
+            font-feature-settings: "kern" on;
+        }
+
+        h1 {
+            position: static;
+            margin: 0;
+            width: 384px;
+            font-size: 64px;
+            font-weight: 600;
+            line-height: 72px;
+            text-align: center;
+            letter-spacing: 0em;
+            font-variation-settings: "opsz" auto;
+            font-feature-settings: "kern" on;
+            color: #0A0A0A;
+            z-index: 0;
+        }
+
+        h3 {
+            position: static;
+            margin: 0;
+            width: 288px;
+            font-size: 18px;
+            font-weight: normal;
+            line-height: normal;
+            text-align: center;
+            letter-spacing: 0em;
+            font-variation-settings: "opsz" auto;
+            font-feature-settings: "kern" on;
+            color: #3D3D3D;
+            z-index: 1;
+        }
+
+        /* 产品部分 */
+        .products {
+            position: static;
+            left: 0px;
+            top: 548px;
+            height: 616px;
+            opacity: 1;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            padding: 60px 100px;
+            gap: 32px;
+            z-index: 2;
+        }
+
+        .products-intro {
+            position: static;
+            left: 261px;
+            top: 99px;
+            width: 437px;
+            height: fit-content;
+            opacity: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 9px 26.5px;
+            gap: 16px;
+            z-index: 0;
+        }
+
+        .products-h1 {
+            position: static;
+            font-size: 64px;
+            font-weight: 500;
+            line-height: normal;
+            letter-spacing: 0em;
+            font-variation-settings: "opsz" auto;
+            font-feature-settings: "kern" on;
+            color: #3D3D3D;
+            z-index: 0;
+        }
+
+        .products-intro-text {
+            position: static;
+            font-size: 18px;
+            font-weight: normal;
+            line-height: normal;
+            letter-spacing: 0em;
+            font-variation-settings: "opsz" auto;
+            font-feature-settings: "kern" on;
+            color: #3D3D3D;
+            z-index: 1;
+        }
+
+        .products-list {
+            position: static;
+            left: 730px;
+            top: 99px;
+            width: 449px;
+            height: 418px;
+            border-radius: 24px;
+            opacity: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 9px 10px;
+            gap: 10px;
+            z-index: 1;
+        }
+
+        .product-item {
+            position: static;
+            left: 10px;
+            top: 10px;
+            width: 429px;
+            border-radius: 14px;
+            opacity: var(--f);
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 10px;
+            gap: 0px 0px;
+            flex-wrap: wrap;
+            align-content: center;
+            align-self: stretch;
+            background: #FAFAFA;
+            box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.3);
+            z-index: 0;
+        }
+
+        .product-item:hover {
+            box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.3);
+            background: #ebebeb;
+        }
+
+        .product-link {
+            text-decoration: none;
+        }
+
+        .products-logo {
+            width: 52px;
+            height: 52px;
+        }
+
+        .products-desc {
+            position: static;
+            display: flex;
+            flex-direction: column;
+            padding: 2px 10px;
+            flex-grow: 1;
+            z-index: 1;
+        }
+
+        .products-desc-title {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 0px;
+            gap: 7px;
+        }
+
+        .products-desc-name {
+            font-size: 18px;
+            font-weight: 500;
+            line-height: normal;
+            letter-spacing: 0em;
+            font-variation-settings: "opsz" auto;
+            font-feature-settings: "kern" on;
+            color: #3D3D3D;
+        }
+
+        .products-desc-text {
+            position: static;
+            font-size: 14px;
+            font-weight: 300;
+            line-height: normal;
+            letter-spacing: 0em;
+            font-variation-settings: "opsz" auto;
+            font-feature-settings: "kern" on;
+            color: #3D3D3D;
+            z-index: 1;
+        }
+
+        .gplv3 {
+            position: static;
+            left: 88px;
+            top: 2px;
+            width: 52px;
+            height: 21px;
+            display: flex;
+            background: url(../images/gplv3-127x51.png) no-repeat;
+            background-size: 100%;
+            z-index: 1;
+        }
+
+        /* 联系方式部分 */
+        .contact {
+            position: static;
+            left: 0px;
+            top: 1166px;
+            height: 50vh;
+            opacity: 1;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            padding: 100px;
+            gap: 12px;
+            align-self: stretch;
+            z-index: 3;
+        }
+
+        .contact-desc {
+            position: static;
+            left: 622.25px;
+            top: 100px;
+            width: 565px;
+            height: 215px;
+            opacity: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 9px 26.5px;
+            gap: 16px;
+            z-index: 1;
+        }
+
+        .contact-h1 {
+            position: static;
+            left: 26.5px;
+            top: 9px;
+            width: 512px;
+            height: 85px;
+            opacity: 1;
+            font-family: MiSans;
+            font-size: 64px;
+            font-weight: 500;
+            line-height: normal;
+            letter-spacing: 0em;
+            font-variation-settings: "opsz" auto;
+            font-feature-settings: "kern" on;
+            color: #3D3D3D;
+            z-index: 0;
+        }
+
+        .contact-desc-text {
+            position: static;
+            left: 26.5px;
+            top: 110px;
+            width: 320px;
+            height: 96px;
+            opacity: 1;
+            font-family: MiSans;
+            font-size: 18px;
+            font-weight: normal;
+            line-height: normal;
+            letter-spacing: 0em;
+            font-variation-settings: "opsz" auto;
+            font-feature-settings: "kern" on;
+            color: #3D3D3D;
+            z-index: 1;
+        }
+
+        .contact-list {
+            position: static;
+            width: 357.5px;
+            height: 250px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px 11.25px;
+            gap: 9px;
+            z-index: 0;
+        }
+
+        .contact-item {
+            position: static;
+            left: 11.25px;
+            top: 10px;
+            width: 335px;
+            border-radius: 18px;
+            opacity: var(--f);
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 10px;
+            align-self: stretch;
+            background: #FAFAFA;
+            box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.3);
+            z-index: 0;
+            transition: all .3s cubic-bezier(0, .4, .5, 1);
+        }
+
+        .contact-item:hover {
+            box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.3);
+            background: #ebebeb;
+        }
+
+        .contact-link {
+            text-decoration: none;
+        }
+
+        .contact-info-logo {
+            width: 42px;
+            height: 42px;
+        }
+
+        .contact-info-desc {
+            position: static;
+            left: 52px;
+            top: 10px;
+            height: 52px;
+            opacity: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0px 9.75px;
+            flex-grow: 1;
+            align-self: stretch;
+            z-index: 1;
+        }
+
+        .contact-info-title {
+            position: static;
+            left: 9.75px;
+            top: 4.5px;
+            height: 24px;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: normal;
+            letter-spacing: 0em;
+            font-variation-settings: "opsz" auto;
+            font-feature-settings: "kern" on;
+            color: #3D3D3D;
+            z-index: 0;
+        }
+
+        .contact-info-text {
+            position: static;
+            left: 9.75px;
+            top: 28.5px;
+            height: 19px;
+            font-size: 14px;
+            font-weight: 300;
+            line-height: normal;
+            letter-spacing: 0em;
+            font-variation-settings: "opsz" auto;
+            font-feature-settings: "kern" on;
+            color: #3D3D3D;
+            z-index: 1;
+        }
+
+        /* 页脚 */
+        footer {
+            position: static;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            padding: 0px;
+            align-self: stretch;
+            background: #F4F4F4;
+            z-index: 4;
+        }
+
+        .footer-container {
+            position: static;
+            left: 120px;
+            top: 0px;
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            flex-direction: column;
+            padding: 16px;
+            gap: 6px;
+            z-index: 0;
+        }
+
+        .footer-logo {
+            width: 160px;
+            height: 25.84px;
+            fill: #C1C1C1;
+        }
+
+        footer p {
+            position: static;
+            width: fit-content;
+            font-size: 16px;
+            font-weight: normal;
+            line-height: normal;
+            letter-spacing: 0em;
+            font-variation-settings: "opsz" auto;
+            font-feature-settings: "kern" on;
+            color: #4C4C4C;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 1200px) {
+            .head-container {
+                padding: 5px 12px;
+                gap: 20px;
+            }
+
+            .nav {
+                gap: 20px;
+            }
+
+            .products {
+                padding: 60px 50px;
+            }
+
+            .contact {
+                padding: 100px 50px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .slogan h1 {
+                font-size: 50px;
+                line-height: 60px;
+                width: auto;
+            }
+
+            .slogan h3 {
+                font-size: 16px;
+                width: auto;
+            }
+
+            .products {
+                flex-direction: column;
+                height: auto;
+                padding: 60px 30px;
+                align-items: center;
+            }
+
+            .products-intro {
+                width: 100%;
+                max-width: 437px;
+                align-items: center;
+                text-align: center;
+            }
+
+            .products-list {
+                width: 100%;
+                align-items: center;
+                max-width: 449px;
+            }
+
+            .product-item {
+                width: 22rem;
+            }
+
+            .contact {
+                flex-direction: column-reverse;
+                height: auto;
+                padding: 50px 30px;
+                align-items: center;
+            }
+
+            .contact-desc {
+                width: 100%;
+                max-width: 565px;
+                align-items: center;
+                text-align: center;
+            }
+
+            .contact-h1 {
+                width: 100%;
+            }
+
+            .contact-list {
+                width: 100%;
+                max-width: 357.5px;
+            }
+
+            /* .contact-item {
+                width: 100%;
+            } */
+        }
+
+        @media (max-width: 768px) {
+            header {
+                height: auto;
+                padding: 10px 0;
+            }
+
+            .head-container {
+                flex-direction: column;
+                height: auto;
+                gap: 15px;
+            }
+
+            .nav {
+                justify-content: center;
+            }
+
+            .slogan {
+                height: 70vh;
+            }
+
+            .slogan h1 {
+                font-size: 40px;
+                line-height: 50px;
+            }
+
+            .slogan h3 {
+                font-size: 14px;
+            }
+
+            .products-h1 {
+                font-size: 48px;
+            }
+
+            .products-intro-text {
+                font-size: 16px;
+            }
+
+            .contact-h1 {
+                font-size: 48px;
+            }
+
+            .contact-desc-text {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .head-container {
+                padding: 10px;
+                gap: 15px;
+            }
+
+            .nav {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .nav a {
+                font-size: 13px;
+            }
+
+            .slogan {
+                padding: 5px;
+            }
+
+            .slogan h1 {
+                font-size: 32px;
+                line-height: 40px;
+                width: 100%;
+            }
+
+            .slogan h3 {
+                width: 100%;
+                font-size: 13px;
+            }
+
+            .products {
+                padding: 90px 15px 45px 15px;
+                gap: 20px;
+            }
+
+            .products-intro {
+                padding: 5px 10px;
+                gap: 12px;
+            }
+
+            .products-h1 {
+                font-size: 36px;
+            }
+
+            .products-intro-text {
+                font-size: 14px;
+            }
+
+            .products-list {
+                padding: 5px;
+                gap: 8px;
+            }
+
+            .product-item {
+                padding: 8px;
+                width: 80vw;
+            }
+
+            .products-logo {
+                width: 45px;
+                height: 45px;
+            }
+
+            .contact {
+                padding: 17vh 15px;
+                gap: 20px;
+            }
+
+            .contact-desc {
+                padding: 5px 10px;
+                gap: 12px;
+            }
+
+            .contact-h1 {
+                font-size: 36px;
+                height: auto;
+            }
+
+            .contact-desc-text {
+                font-size: 14px;
+                height: auto;
+            }
+
+            .contact-list {
+                padding: 5px;
+                gap: 8px;
+            }
+
+            .contact-item {
+                padding: 8px;
+                width: 80vw;
+            }
+
+            .contact-info-logo {
+                width: 36px;
+                height: 36px;
+            }
+
+            .footer-container {
+                padding: 12px;
+                gap: 4px;
+            }
+
+            .footer-logo {
+                width: 120px;
+                height: auto;
+            }
+
+            footer p {
+                font-size: 14px;
+            }
+        }
